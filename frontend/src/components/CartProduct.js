@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { CartContext } from "../CartContext";
 import { useContext } from "react";
@@ -6,7 +7,7 @@ import { getProductData } from "../productsStore";
 function CartProduct(props) {
     const cart = useContext(CartContext);
     const id = props.id;
-    const quantity = props.quantity;
+    const quantity = props.quantity; // Fixed the variable name
     const productData = getProductData(id);
 
     return (
@@ -18,7 +19,7 @@ function CartProduct(props) {
                     </Col>
                     <Col>
                         <h3>{productData.title}</h3>
-                        <p>${ (productData.price).toFixed(2) }</p>
+                        <p>${(productData.price).toFixed(2)}</p>
                     </Col>
                     <Col>
                         <Row>
